@@ -40,12 +40,16 @@ def end_reply_text():
     return reply
 
 
-
+# currently these mods are in memory here
+# maybe in the future do a sqlite or a plain JSON text file with mod information
+# these simple arrays are mainly for testing
+# also people usually mention the "big top 50ish" mods
 skyrim_mods = []
 
 skyrim_mods.append(Mod("SkyUI", 3863, SKYRIM))
-skyrim_mods.append(Mod("iHUD", 3222, SKYRIM))
-skyrim_mods.append(Mod("Enhanced Camera", 57859, SKYRIM))
+skyrim_mods.append(Mod("iHUD", 3222, SKYRIM, ["immersive hud", "i hud"]))
+# i wonder if the space in the name will mess up the text in comment search?
+skyrim_mods.append(Mod("Enhanced Camera", 57859, SKYRIM, ["ec"]))
 # skyrim_mods.append(Mod("", 1, SKYRIM)
 # skyrim_mods.append(Mod("", 1, SKYRIM)
 # skyrim_mods.append(Mod("", 1, SKYRIM)
@@ -54,7 +58,8 @@ skyrim_mods.append(Mod("Enhanced Camera", 57859, SKYRIM))
 fallout4_mods = []
 # fallout4.append(Mod("", 57859, SKYRIM))
 
-for mod in skyrim_mods:
+
+for mod in skyrim_mods:
     mod.print_out()
     print(mod.get_mod_link())
     
