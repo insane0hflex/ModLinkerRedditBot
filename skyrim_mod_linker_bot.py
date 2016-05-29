@@ -35,7 +35,7 @@ R_FALLOUTMODS = "falloutmods"
 
 def end_reply_text():
     reply =  "    ---------------------------------------- \n"
-    reply += "    Skyrim Mod Linker bot by /u/insane0hflex \n"
+    reply += "    Mod Linker by /u/insane0hflex \n"
     reply += "    Send a message to /u/insane0hflex if something went wrong.\n"
     return reply
 
@@ -67,11 +67,23 @@ for mod in skyrim_mods:
     # pprint.pprint(mod.get_mod_info_as_json())
 
 
-# print("Starting...")
+print("Starting...")
 
-# r = praw.Reddit("skyrim mod linker bot by /u/insane0hflex")
+r = praw.Reddit("skyrim mod linker bot by /u/insane0hflex")
 
-# r.login("", "")
+username = "modlinkerbot"
+password = ""
+
+with open("password.txt", "r") as f:
+    password = f.readline().strip() #strip might be uneccessary here.
+
+#print password
+
+print("Logging into reddit as " + username)
+
+r.login(username, password, disable_warning=True)
+
+print("Logged in successfully!")
 
 # already_done = set()
 
