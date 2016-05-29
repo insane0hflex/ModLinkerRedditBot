@@ -48,11 +48,12 @@ skyrim_mods = []
 
 skyrim_mods.append(Mod("SkyUI", 3863, SKYRIM))
 skyrim_mods.append(Mod("iHUD", 3222, SKYRIM, ["immersive hud", "i hud"]))
+
 # i wonder if the space in the name will mess up the text in comment search?
 skyrim_mods.append(Mod("Enhanced Camera", 57859, SKYRIM, ["ec"]))
+
 # skyrim_mods.append(Mod("", 1, SKYRIM)
-# skyrim_mods.append(Mod("", 1, SKYRIM)
-# skyrim_mods.append(Mod("", 1, SKYRIM)
+
 
 
 fallout4_mods = []
