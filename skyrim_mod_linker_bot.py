@@ -43,7 +43,8 @@ def end_reply_text():
 # currently these mods are in memory here
 # maybe in the future do a sqlite or a plain JSON text file with mod information
 # these simple arrays are mainly for testing
-# also people usually mention the "big top 50ish" mods
+# also people usually mention the "big top 50ish" mods so there is no reason to
+# create a huge database of sorts for mods
 skyrim_mods = []
 
 skyrim_mods.append(Mod("SkyUI", 3863, SKYRIM))
@@ -60,9 +61,9 @@ fallout4_mods = []
 # fallout4.append(Mod("", 57859, SKYRIM))
 
 
-for mod in skyrim_mods:
-    mod.print_out()
-    print(mod.get_mod_link())
+# for mod in skyrim_mods:
+    # mod.print_out()
+    # print(mod.get_mod_link())
     
     # json like print out - maybe to disk or something?
     # pprint.pprint(mod.get_mod_info_as_json())
@@ -72,13 +73,13 @@ print("Starting...")
 
 r = praw.Reddit("skyrim mod linker bot by /u/insane0hflex")
 
+# login information
+# password is stored in a text file as the first line (and only word too)
 username = "modlinkerbot"
 password = ""
 
 with open("password.txt", "r") as f:
     password = f.readline().strip() #strip might be uneccessary here.
-
-#print password
 
 print("Logging into reddit as " + username)
 
@@ -86,7 +87,9 @@ r.login(username, password, disable_warning=True)
 
 print("Logged in successfully!")
 
-# already_done = set()
+# store already seen comments
+# this is in memory however. Perhaps store them to disk when bot exits/stops
+already_done = set()
 
 # while True:
 
