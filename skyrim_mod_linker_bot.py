@@ -33,6 +33,7 @@ FALLOUT4 = "fallout4"
 R_SKYRIMMODS = "skyrimmods"
 R_FALLOUTMODS = "falloutmods"
 
+# text to append at the end of a reply to a comment/submission of linked mods
 def end_reply_text():
     reply =  "    ---------------------------------------- \n"
     reply += "    Mod Linker by /u/insane0hflex \n"
@@ -88,7 +89,7 @@ r.login(username, password, disable_warning=True)
 print("Logged in successfully!")
 
 # store already seen comments
-# this is in memory however. Perhaps store them to disk when bot exits/stops
+# this is in memory however. Perhaps store them to disk when the bot exits/stops
 already_done = set()
 
 # while True:
@@ -121,7 +122,8 @@ already_done = set()
             # else:
                 # print ("No matches found.")
 
-
+#sleep for an hour before regetting comments
+#    time.sleep(3600)
 
 
 
