@@ -7,7 +7,8 @@ class Mod:
         self.mod_name = mod_name
         self.nexus_id = nexus_id
         self.game_name = game_name
-        # for like "iHUD to Immersive HUD, or EC for Enhanced Camera"
+        # for common abbreviations/aliases like "iHUD" to "Immersive HUD", or "SKSE" for "Skyrim Script Extender"
+        # or vice versa
         self.alias_names = [] 
 
 
